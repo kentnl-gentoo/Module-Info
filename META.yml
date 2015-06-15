@@ -2,37 +2,21 @@
 abstract: 'Information about Perl modules'
 author:
   - 'Mattia Barbon <mbarbon@cpan.org>'
-build_requires: {}
+build_requires:
+  ExtUtils::MakeMaker: '0'
 configure_requires:
-  Module::Build: 0.40
+  ExtUtils::MakeMaker: '0'
 dynamic_config: 0
-generated_by: 'Module::Build version 0.4007, CPAN::Meta::Converter version 2.120921'
+generated_by: 'ExtUtils::MakeMaker version 7.02, CPAN::Meta::Converter version 2.150001'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
-  version: 1.4
+  version: '1.4'
 name: Module-Info
-provides:
-  B::BUtils:
-    file: lib/B/BUtils.pm
-    version: 0
-  B::Module::Info:
-    file: lib/B/Module/Info.pm
-    version: 0.24
-  B::Utils:
-    file: lib/B/BUtils.pm
-    version: 0.04_02
-  Module::Info:
-    file: lib/Module/Info.pm
-    version: 0.35
-  Module::Info::Safe:
-    file: lib/Module/Info.pm
-    version: 0
-  Module::Info::Unsafe:
-    file: lib/Module/Info.pm
-    version: 0
+no_index:
+  directory:
+    - t
+    - inc
 requires:
-  File::Spec: 0.08
-resources:
-  license: http://dev.perl.org/licenses/
-version: 0.35
+  File::Spec: '0.8'
+version: 0.35_01
