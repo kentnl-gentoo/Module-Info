@@ -32,10 +32,14 @@
       },
       "runtime" : {
          "requires" : {
-            "File::Spec" : "0.8"
+            "B" : "0",
+            "B::Utils" : "0.26",
+            "Carp" : "0",
+            "File::Spec" : "0.8",
+            "strict" : "0"
          }
       }
    },
    "release_status" : "testing",
-   "version" : "0.35_01"
+   "version" : "0.35_02"
 }

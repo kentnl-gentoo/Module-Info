@@ -18,5 +18,9 @@ no_index:
     - t
     - inc
 requires:
+  B: '0'
+  B::Utils: '0.26'
+  Carp: '0'
   File::Spec: '0.8'
-version: 0.35_01
+  strict: '0'
+version: 0.35_02
