@@ -22,6 +22,7 @@ requires:
   B::Utils: '0.27'
   Carp: '0'
   File::Spec: '0.8'
+  perl: '5.006'
   strict: '0'
-version: 0.35_05
+version: 0.35_06
 x_serialization_backend: 'CPAN::Meta::YAML version 0.016'
