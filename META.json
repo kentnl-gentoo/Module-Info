@@ -4,7 +4,7 @@
       "Mattia Barbon <mbarbon@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "ExtUtils::MakeMaker version 7.0401, CPAN::Meta::Converter version 2.150001",
+   "generated_by" : "ExtUtils::MakeMaker version 7.02, CPAN::Meta::Converter version 2.150005",
    "license" : [
       "perl_5"
    ],
@@ -41,6 +41,7 @@
          }
       }
    },
-   "release_status" : "testing",
-   "version" : "0.35_07"
+   "release_status" : "stable",
+   "version" : "0.36",
+   "x_serialization_backend" : "JSON::PP version 2.27203"
 }
