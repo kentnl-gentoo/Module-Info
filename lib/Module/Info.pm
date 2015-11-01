@@ -12,7 +12,7 @@ my $has_version_pm = eval 'use version; 1';
 our $AUTOLOAD;
 our $VERSION;
 
-$VERSION = eval 'use version; 1' ? 'version'->new('0.36') : '0.36';
+$VERSION = eval 'use version; 1' ? 'version'->new('0.37') : '0.37';
 $VERSION = eval $VERSION;
 
 
@@ -319,6 +319,42 @@ sub is_core {
                             $Config{installprivlib},
                             $Config{archlib},
                             $Config{privlib});
+}
+
+=item B<has_pod>
+
+    my $has_pod = $module->has_pod;
+
+Returns the location of the module's pod, which can be the module file itself, 
+if the POD is inlined, the associated POD file, or nothing if there is no POD 
+at all.
+
+=cut
+
+sub has_pod {
+    my $self = shift; 
+
+    my $filename = $self->file;
+    
+    open my $file, $filename or return; # the file won't even open 
+    
+    while( <$file> ) { 
+        return $filename if /^=[a-z]/; 
+    } 
+
+    # nothing found? Try a companion POD file
+
+    $filename =~ s/\.[^.]+$/.pod/ or return;
+
+    return unless -f $filename;
+
+    open $file, $filename or return;
+    
+    while( <$file> ) { 
+        return $filename if /^=[a-z]/; 
+    } 
+    
+    return;
 }
 
 =back
@@ -721,12 +757,19 @@ sub use_version {
 
 =back
 
+=head1 REPOSITORY
+
+L<https://github.com/neilb/Module-Info>
+
 =head1 AUTHOR
 
 Michael G Schwern <schwern@pobox.com> with code from ExtUtils::MM_Unix,
 Module::InstalledVersion and lots of cargo-culting from B::Deparse.
 
-Mattia Barbon <mbarbon@cpan.org> is the current maintainer.
+Mattia Barbon <mbarbon@cpan.org> maintained
+the module from 2002 to 2013.
+
+Neil Bowers <neilb@cpan.org> is the current maintainer.
 
 =head1 LICENSE
 
